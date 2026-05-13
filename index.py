@@ -87,8 +87,8 @@ async def setup(ctx):
     embed = discord.Embed(
         title="Vérification de sécurité",
         description=(
-            "Pour accéder au serveur, vous devez faire ce capchat.\n\n"
-            "En appuyant sur "Je suis un Humain".\n"
+            "Pour accéder au serveur, vous devez faire ce captcha.\n\n"
+            "En appuyant sur 'JE SUIS UN HUMAIN'.\n"
         ),
         color=0x5865F2
     )
