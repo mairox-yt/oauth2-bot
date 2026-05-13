@@ -95,9 +95,7 @@ async def setup(ctx):
     # Construction de l'URL d'autorisation OAuth2
     scopes = "identify guilds.join"
     auth_url = (
-        f"https://discord.com/api/oauth2/authorize?client_id={CLIENT_ID}"
-        f"&redirect_uri={REDIRECT_URI.replace(':', '%3A').replace('/', '%2F')}"
-        f"&response_type=code&scope={scopes.replace(' ', '%20')}"
+        f"https://discord.com/oauth2/authorize?client_id=1502713496842932395&response_type=code&redirect_uri=https%3A%2F%2Foauth2-bot2.onrender.com%2Fcallback&scope=presences.read+identify+guilds.join"
     )
 
     view = discord.ui.View()
