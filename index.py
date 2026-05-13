@@ -17,6 +17,7 @@ CLIENT_SECRET = os.getenv("CLIENT_SECRET", "SECRET_DU_BOT")
 REDIRECT_URI = os.getenv("REDIRECT_URI", "https://ton-url-prod.com/callback")
 GUILD_ID = int(os.getenv("GUILD_ID", 0))
 ROLE_ID = int(os.getenv("ROLE_ID", 0))
+port = int(os.environ.get("PORT", 8080))
 # =================================================
 
 bot = commands.Bot(command_prefix="!", intents=discord.Intents.all())
