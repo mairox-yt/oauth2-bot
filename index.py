@@ -83,20 +83,24 @@ async def on_ready():
 @bot.command()
 @commands.has_permissions(administrator=True)
 async def setup(ctx):
-    """Envoie l'embed avec le bouton de vérification"""
-    embed = discord.Embed(
-        title="Vérification de sécurité",
-        description=(
-            "Pour accéder au serveur, vous devez faire ce captcha.\n\n"
-            "En appuyant sur 'JE SUIS UN HUMAIN'.\n"
-        ),
-        color=0x5865F2
-    )
+    # On définit les scopes proprement (juste identify et guilds.join)
+    # L'ID de ton client est 1502713496842932395 d'après ton URL
+    client_id = "1502713496842932395"
+    redirect_uri = "https://oauth2-bot2.onrender.com/callback"
     
-    # Construction de l'URL d'autorisation OAuth2
-    scopes = "identify guilds.join"
+    # On construit l'URL proprement sans scopes inutiles
     auth_url = (
-        f"https://discord.com/oauth2/authorize?client_id=1502713496842932395&response_type=code&redirect_uri=https%3A%2F%2Foauth2-bot2.onrender.com%2Fcallback&scope=presences.read+identify+guilds.join"
+        f"https://discord.com/oauth2/authorize"
+        f"?client_id={client_id}"
+        f"&redirect_uri={redirect_uri.replace(':', '%3A').replace('/', '%2F')}"
+        f"&response_type=code"
+        f"&scope=identify%20guilds.join"
+    )
+
+    embed = discord.Embed(
+        title="🛡️ Vérification de sécurité",
+        description="Clique sur le bouton ci-dessous pour prouver que tu es un humain et accéder au serveur.",
+        color=0x5865F2
     )
 
     view = discord.ui.View()
@@ -106,9 +110,8 @@ async def setup(ctx):
         url=auth_url
     )
     view.add_item(button)
-
+    
     await ctx.send(embed=embed, view=view)
-
 # --- LANCEMENT ---
 
 async def main():
