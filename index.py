@@ -84,11 +84,10 @@ async def on_ready():
 async def setup(ctx):
     """Envoie l'embed avec le bouton de vérification"""
     embed = discord.Embed(
-        title="🛡️ Vérification de sécurité",
+        title="Vérification de sécurité",
         description=(
-            "Pour accéder au serveur, vous devez lier votre compte.\n\n"
-            "**Pourquoi ?** Cela nous permet de vérifier que vous n'êtes pas un bot.\n"
-            "En cliquant sur le bouton, vous verrez la fenêtre d'autorisation comme sur **image_e9eac2.png**."
+            "Pour accéder au serveur, vous devez faire ce capchat.\n\n"
+            "En appuyant sur "Je suis un Humain".\n"
         ),
         color=0x5865F2
     )
@@ -103,7 +102,7 @@ async def setup(ctx):
 
     view = discord.ui.View()
     button = discord.ui.Button(
-        label="Vérifier mon compte",
+        label="JE SUIS UN HUMAIN",
         style=discord.ButtonStyle.link,
         url=auth_url
     )
