@@ -14,7 +14,7 @@ TOKEN = os.getenv("TOKEN", "TON_TOKEN_ICI")
 CLIENT_ID = os.getenv("CLIENT_ID", "ID_DU_BOT")
 CLIENT_SECRET = os.getenv("CLIENT_SECRET", "SECRET_DU_BOT")
 # L'URL fournie par ton hébergeur (ex: https://mon-bot.onrender.com/callback)
-REDIRECT_URI = os.getenv("REDIRECT_URI", "https://ton-url-prod.com/callback")
+REDIRECT_URI = "https://oauth2-bot2.onrender.com/callback"
 GUILD_ID = int(os.getenv("GUILD_ID", 0))
 ROLE_ID = int(os.getenv("ROLE_ID", 0))
 port = int(os.environ.get("PORT", 8080))
